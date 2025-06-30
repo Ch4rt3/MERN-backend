@@ -25,7 +25,9 @@ app.use( express.json() );
 app.use('/api/auth', require('./routes/auth'));
 app.use('/api/events', require('./routes/events'));
 
-// app.use(express.static(path.join(__dirname, 'public')));
+// app.use('*', (req, res) => {
+//     res.sendFile(path.resolve(__dirname, 'public', 'index.html'));
+// });
 
 app.listen( PORT, () => {
     console.log(`Server is running on port ${ 4000 }`);
